@@ -1,0 +1,57 @@
+{
+	"elements": [
+		{
+			"from": [6, 6, 6],
+			"to": [10, 10, 10],
+			"faces": {
+				"north": {"uv": [0, 8, 8, 16], "texture": "#fruit"},
+				"east": {"uv": [0, 8, 8, 16], "texture": "#fruit"},
+				"south": {"uv": [0, 8, 8, 16], "texture": "#fruit"},
+				"west": {"uv": [0, 8, 8, 16], "texture": "#fruit"},
+				"up": {"uv": [0, 8, 8, 16], "texture": "#fruit"},
+				"down": {"uv": [0, 8, 8, 16], "texture": "#fruit"}
+			}
+		},
+		{
+			"from": [5, 5, 5],
+			"to": [11, 11, 11],
+			"faces": {
+				"north": {"uv": [8, 8, 16, 16], "texture": "#fruit"},
+				"east": {"uv": [8, 8, 16, 16], "texture": "#fruit"},
+				"south": {"uv": [8, 8, 16, 16], "texture": "#fruit"},
+				"west": {"uv": [8, 8, 16, 16], "texture": "#fruit"},
+				"up": {"uv": [8, 8, 16, 16], "texture": "#fruit"},
+				"down": {"uv": [8, 8, 16, 16], "texture": "#fruit"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_righthand": {
+			"translation": [0, 1, 1],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"firstperson_lefthand": {
+			"translation": [0, 1, 1],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"ground": {
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"gui": {
+			"rotation": [22.5, -45, 0],
+			"scale": [1.25, 1.25, 1.25]
+		},
+		"head": {
+			"translation": [0, 9.5, 0]
+		},
+		"fixed": {
+			"rotation": [1, 0, 0]
+		}
+	}
+}

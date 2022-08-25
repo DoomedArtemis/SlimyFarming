@@ -1,0 +1,7 @@
+{
+  "parent": "slimyfarming:generation/slime_fruit",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "fruit": "slimyfarming:item/honey_slime_fruit"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "slimyfarming:item/quicksilver_slime_seeds"
+  }
+}

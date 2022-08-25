@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "de.artemis.slimyfarming.slimyfarming.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "slimyfarming.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

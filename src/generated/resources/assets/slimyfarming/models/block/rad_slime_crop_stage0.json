@@ -1,0 +1,8 @@
+{
+  "parent": "slimyfarming:generation/slime_crop_stage0",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "cross": "slimyfarming:block/slime_crop_stage0",
+    "particle": "slimyfarming:block/slime_crop_stage0"
+  }
+}

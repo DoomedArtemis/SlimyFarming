@@ -1,0 +1,9 @@
+{
+  "parent": "slimyfarming:generation/slime_crop_stage4",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "cross": "slimyfarming:block/slime_crop_stage4",
+    "fruit": "slimyfarming:block/phosphor_slime_fruit",
+    "particle": "slimyfarming:block/slime_crop_stage4"
+  }
+}
