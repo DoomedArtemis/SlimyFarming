@@ -2,7 +2,9 @@ package de.artemis.slimyfarming.common.data;
 
 import de.artemis.slimyfarming.SlimyFarming;
 import de.artemis.slimyfarming.common.blocks.SlimeCropBlock;
+import de.artemis.slimyfarming.common.blocks.SlimeFabricatorBlock;
 import de.artemis.slimyfarming.common.registration.ModBlocks;
+import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -18,8 +20,7 @@ public class ModelAndBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-
-        simpleBlock(ModBlocks.SLIME_FABRICATOR.get());
+        slimeFabricatorBlock(ModBlocks.SLIME_FABRICATOR.get(), new ResourceLocation(SlimyFarming.MODID, "block/slime_fabricator"));
 
         slimeBlock(ModBlocks.PINK_SLIME_BLOCK.get(), new ResourceLocation(SlimyFarming.MODID, "block/pink_slime_block"));
         slimeBlock(ModBlocks.ROCK_SLIME_BLOCK.get(), new ResourceLocation(SlimyFarming.MODID, "block/rock_slime_block"));
@@ -58,6 +59,36 @@ public class ModelAndBlockStateProvider extends BlockStateProvider {
         slimeCropBlock(ModBlocks.SABER_SLIME_CROP.get(), new ResourceLocation(SlimyFarming.MODID, "block/saber_slime_fruit"));
         slimeCropBlock(ModBlocks.GOLD_SLIME_CROP.get(), new ResourceLocation(SlimyFarming.MODID, "block/gold_slime_fruit"));
         slimeCropBlock(ModBlocks.QUICKSILVER_SLIME_CROP.get(), new ResourceLocation(SlimyFarming.MODID, "block/quicksilver_slime_fruit"));
+    }
+
+    public void slimeFabricatorBlock(Block block, ResourceLocation texture) {
+        ModelFile slime_fabricator_block = models().withExistingParent(DataProvider.getRegistryName(block.asItem()),
+                        new ResourceLocation(SlimyFarming.MODID, "generation/slime_fabricator"))
+                .renderType("translucent")
+                .texture("block", texture)
+                .texture("particle", texture);
+
+        slimeFabricatorBlock(block, slime_fabricator_block);
+    }
+
+    public void slimeFabricatorBlock(Block block, ModelFile slime_fabricator_block) {
+        getVariantBuilder(block).forAllStates(state -> {
+            Direction facing = state.getValue(SlimeFabricatorBlock.FACING);
+            ModelFile finalModel = slime_fabricator_block;
+            return ConfiguredModel.builder()
+                    .modelFile(finalModel)
+                    .rotationY(getSlimeFabricatorRotation(facing))
+                    .build();
+        });
+    }
+
+    private static int getSlimeFabricatorRotation(Direction facing) {
+        return switch (facing) {
+            case EAST -> 90;
+            case SOUTH -> 180;
+            case WEST -> 270;
+            default -> 0;
+        };
     }
 
     public void slimeBlock(Block block, ResourceLocation texture) {

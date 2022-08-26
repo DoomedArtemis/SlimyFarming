@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "slimyfarming:generation/slime_fabricator",
+  "render_type": "minecraft:translucent",
   "textures": {
-    "all": "slimyfarming:block/slime_fabricator"
+    "block": "slimyfarming:block/slime_fabricator",
+    "particle": "slimyfarming:block/slime_fabricator"
   }
 }

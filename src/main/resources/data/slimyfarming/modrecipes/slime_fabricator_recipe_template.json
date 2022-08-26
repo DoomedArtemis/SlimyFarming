@@ -1,0 +1,23 @@
+{
+  "key": {
+    "a": {
+      "item": "slimyfarming:pink_slime_fruit"
+    },
+    "b": {
+      "item": "minecraft:stone"
+    },
+    "c": {
+      "item": "minecraft:air"
+    }
+  },
+  "pattern": [
+    "aabaa",
+    "aabaa",
+    "bbcbb",
+    "aabaa",
+    "aabaa"
+  ],
+  "result": {
+    "item": "slimyfarming:pink_slime_seeds"
+  }
+}

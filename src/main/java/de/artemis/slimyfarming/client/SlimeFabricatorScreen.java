@@ -12,7 +12,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class SlimeFabricatorScreen extends AbstractContainerScreen<SlimeFabricatorContainer> {
 
-    private final ResourceLocation GUI = new ResourceLocation(SlimyFarming.MODID, "textures/gui/slime_fabricator_gui.png");
+    private static final ResourceLocation GUI = new ResourceLocation(SlimyFarming.MODID, "textures/gui/slime_fabricator_gui.png");
 
     public SlimeFabricatorScreen(SlimeFabricatorContainer container, Inventory inv, Component name) {
         super(container, inv, name);
@@ -28,15 +28,13 @@ public class SlimeFabricatorScreen extends AbstractContainerScreen<SlimeFabricat
     @Override
     protected void renderBg(PoseStack matrixStack, float partialTicks, int mouseX, int mouseY) {
         RenderSystem.setShaderTexture(0, GUI);
-        int relX = (this.width - this.getXSize()) / 2;
-        int relY = (this.height - this.getYSize()) / 2;
-        this.blit(matrixStack, relX, relY, 0, 0, this.getXSize(), this.getYSize());
+        this.blit(matrixStack, getGuiLeft(), getGuiTop(), 0, 0, this.getXSize(), this.getYSize());
     }
 
     @Override
     protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-        drawText(poseStack, 8, 90, Component.translatable("text.slimefabricator.player_inventory_title").getString(), 4144959);
-        drawCenteredText(poseStack, getXSize() / 2, -13, Component.translatable("text.slimefabricator.block_inventory_title").getString(), 4144959);
+        drawText(poseStack, 8, 108, Component.translatable("text.slimefabricator.player_inventory_title").getString(), 4144959);
+        drawCenteredText(poseStack, getXSize() / 2, 5, Component.translatable("text.slimefabricator.block_inventory_title").getString(), 4144959);
     }
 
     protected void drawText(PoseStack poseStack, int mouseX, int mouseY, String text, int color) {
